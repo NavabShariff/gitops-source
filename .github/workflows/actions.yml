@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set image tags
+        id: vars
+        run: |
+          commit_sha=$(echo $GITHUB_SHA | head -c 8)
+          echo "commit_sha=$commit_sha" >> $GITHUB_ENV
+          echo "commit_sha=$commit_sha" >> $GITHUB_OUTPUT
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Use commit_sha from build job
+        run: |
+          echo "Tag from build: ${{ needs.build.outputs.commit_sha }}"
