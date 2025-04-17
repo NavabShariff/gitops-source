@@ -16,9 +16,9 @@ jobs:
           commit_sha=$(echo $GITHUB_SHA | head -c 8)
           echo "commit_sha=$commit_sha" >> $GITHUB_OUTPUT
           
-      - name: Test commit_sha from build job
+      - name: Use commit_sha from build job
         run: |
-          echo "Tag from build: ${{ needs.build.outputs.commit_sha }}"
+          echo "Tag from build: ${{ env.commit_sha }}"
 
   deploy:
     runs-on: ubuntu-latest
