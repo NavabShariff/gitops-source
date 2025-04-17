@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: salary-api
-        image: 096803082364.dkr.ecr.ap-south-1.amazonaws.com/salary-api:c24292e6
+        image: 096803082364.dkr.ecr.ap-south-1.amazonaws.com/salary-api:746439ad
         ports:
         - containerPort: 8080
 
