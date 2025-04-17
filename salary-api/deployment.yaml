@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: salary-api
-        image: ghcr.io/navabshariff/salary-api:925342e4
+        image: 096803082364.dkr.ecr.ap-south-1.amazonaws.com/salary-api:f347cefe
         ports:
         - containerPort: 8080
 
