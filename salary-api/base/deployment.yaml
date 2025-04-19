@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salary-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: salary-api
+  template:
+    metadata:
+      labels:
+        app: salary-api
+    spec:
+      containers:
+        - name: salary-api
+          image: 096803082364.dkr.ecr.ap-south-1.amazonaws.com/salary-api:latest  # default, will be overridden
+          ports:
+            - containerPort: 8080
