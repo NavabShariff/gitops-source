@@ -3,4 +3,4 @@ resources:
 
 images:
   - name: 096803082364.dkr.ecr.ap-south-1.amazonaws.com/salary-api
-    newTag: feature/salary-api-a65a1d28
+    newTag: 9/merge-70e1b6af
